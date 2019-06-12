@@ -1,7 +1,15 @@
+3.times do |topic|
+  Topic.create!(
+    title: "title #{topic}"
+  )
+end
+puts "3 topics created"
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
-    body: "MSMssmsmms smsn sbhbhbshbhbr rbhebrj r"
+    body: "MSMssmsmms smsn sbhbhbshbhbr rbhebrj r",
+    topic_id: Topic.last.id
   )
 end
 
@@ -19,7 +27,7 @@ puts "5 skill created"
 9.times do |portfolio|
   Portfolio.create!(
     title: "Portfolio #{portfolio}",
-    subtitle: "My great #{portfolio}",
+    subtitle: "Ruby on Rails #{portfolio}",
     body: "New Body Yes",
     thumb_image: "https://via.placeholder.com/350x200",
     main_image: "https://via.placeholder.com/600x400"
@@ -27,3 +35,12 @@ puts "5 skill created"
 end
 
 puts "9 Portfolio created"
+
+3.times do |technology|
+  Technology.create!(
+    name: "Tech #{technology}",
+    portfolio_id: Portfolio.last.id
+  )
+end
+
+puts "3 Technology created"
