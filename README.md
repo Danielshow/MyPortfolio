@@ -1,5 +1,5 @@
 ## My Portfolio
-** Built with Ruby on Rails amd Jquery
+** Built with Ruby on Rails, Javascript and Jquery
 
 This  Application is a full stack application that allows user see my Profile, blogs and Portfolio
 
