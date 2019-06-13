@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'figaro'
 gem 'friendly_id', '~> 5.2.4'
+gem 'devise', '~> 4.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
