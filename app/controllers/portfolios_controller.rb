@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Portfolio Controller
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, except: [:new, :create, :index]
+  before_action :set_portfolio, except: %i[new create index]
   def index
     @portfolio_items = Portfolio.all
   end
@@ -15,7 +18,8 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.new(portfolio_params)
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
+        format.html redirect_to portfolios_path,
+                                notice: 'Portfolio was successfully created.'
       else
         format.html { render :new }
       end
@@ -35,7 +39,8 @@ class PortfoliosController < ApplicationController
   def destroy
     @portfolio_item.destroy
     respond_to do |format|
-      format.html { redirect_to portfolios_path, notice: 'Portfolio was deleted successfully.' }
+      format.html redirect_to portfolios_path,
+                              notice: 'Portfolio was deleted successfully.'
     end
   end
 
@@ -49,6 +54,6 @@ class PortfoliosController < ApplicationController
     params.require(:portfolio).permit(:title,
                                       :subtitle,
                                       :body,
-                                     technologies_attributes: [:name])
+                                      technologies_attributes: [:name])
   end
 end

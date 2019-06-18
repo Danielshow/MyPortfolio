@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
+# Whitelist devise parameters
 module DeviseWhitelist
   extend ActiveSupport::Concern
 
   included do
-    before_filter :configure_devise_parameters, if: :devise_controller?
+    before_action :configure_devise_parameters, if: :devise_controller?
   end
 
   def configure_devise_parameters
