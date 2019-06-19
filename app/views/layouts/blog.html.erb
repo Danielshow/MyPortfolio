@@ -15,9 +15,8 @@
     <p class="alert"><%= alert %></p>
     <%= login_helper %>
     <%= yield %>
+    <%= source_helper %>
     <%= render "shared/navbar", location: 'bottom' %>
-    <% if session[:source] %>
-      Thanks for visiting me from <%= session[:source] %>
-    <% end %>
+    
   </body>
 </html>
