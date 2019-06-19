@@ -15,3 +15,5 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';

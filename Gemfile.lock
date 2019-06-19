@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/Danielshow/show_view_tool
+  revision: 278f99223000dcd63fcb0554ad18928b526f8f29
+  specs:
+    show_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,6 +219,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0.rc1)
   sass-rails (~> 5)
+  show_view_tool!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
