@@ -17,4 +17,8 @@ module ApplicationHelper
     greeting = "Thanks for visiting me from #{source}"
     content_tag(:p, greeting, class: 'source-greeting') if source
   end
+
+  def copyright_generator
+    ShowViewTool::Renderer.copyright('Daniel Shotonwa', 'All right reserved')
+  end
 end
