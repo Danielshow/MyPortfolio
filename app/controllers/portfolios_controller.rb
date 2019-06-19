@@ -3,6 +3,7 @@
 # Portfolio Controller
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, except: %i[new create index]
+  layout 'portfolios'
   def index
     @portfolio_items = Portfolio.all
   end
