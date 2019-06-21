@@ -206,3 +206,42 @@ body {
   font-size: 18px;
   margin-left: 30px;
 }
+
+/*
+ * Signin
+ * */
+.new_user {
+  background-color: #fff;
+  padding: 5%;
+  border-radius: 5px;
+  //box-shadow: inset 0 0 5rem rgba(139, 113, 219, .7);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .actions {
+    text-align: center;
+  }
+}
+
+.edit_user {
+  background-color: #fff;
+  padding: 5%;
+  border-radius: 5px;
+  // box-shadow: inset 0 0 5rem rgba(139, 113, 219, .7);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .actions {
+    text-align: center;
+  }
+
+}
+
+.btn-purple {
+  background-color: #9A7DEF;
+  color: #fff;
+}
