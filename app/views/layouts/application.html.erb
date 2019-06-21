@@ -3,6 +3,9 @@
   <head>
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
     <%= csp_meta_tag %>
     <meta name="keywords" content= "<%= @seo_keywords %>"/>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,12 +13,19 @@
   </head>
 
   <body>
-    <%= render "shared/navbar", location: 'top'%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= login_helper %>
+   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+     <header class="masthead mb-auto">
+       <div class="inner">
+         <a href="<%= root_path %>"><h3 class="masthead-brand">DanielShow</h3></a>
+         <nav class="nav nav-masthead justify-content-center">
+           <%= render "shared/application"%>
+           <%= login_helper("nav-link") %>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
     <%= source_helper %>
-    <%= copyright_generator %>
+    <%= render "shared/footer" %>
+   </div>
   </body>
 </html>

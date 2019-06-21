@@ -13,7 +13,5 @@ require("channels")
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
+// import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';

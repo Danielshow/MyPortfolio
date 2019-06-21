@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'figaro'
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.2'
+gem 'bootstrap', '~> 4.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,3 +52,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'show_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 1.6', '>= 1.6.3'
+gem "font-awesome-rails"

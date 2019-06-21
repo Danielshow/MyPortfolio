@@ -1,3 +1,18 @@
-<h1> Hi, <%= current_user.first_name %> </h1>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Daniel Shotonwa</h1>
+  <p class="lead big">I am a Full Stack Ruby on Rails/Javascript Developer that specialises in making the world a beautiful place.</p>
+  <p class="lead">
+  <a href="<%= about_path %>" class="btn btn-lg btn-secondary">Learn more</a>
+  </p>
+  <div class="my-icon">
+    <%= link_to fa_icon("github"), "https://github.com/Danielshow" %>
+    <%= link_to fa_icon("facebook"), "https://www.facebook.com/daniel.show.96" %>
+    <%= link_to fa_icon("twitter"), "https://twitter.com/d_showWorld" %>
+    <%= link_to fa_icon("linkedin"), "https://www.linkedin.com/in/shotonwa-daniel-aa8190125/" %>
+  </div>
+  <div class="line"></div>
+  <div class="contact">
+    <h3>Have an Idea?</h3>
+    <button class="btn-lg"><a href="mailto:danielshotonwa53@gmail.com?subject=PortFolio Contact">Contact Me</a></button>
+  </div>
+</main>
