@@ -21,4 +21,8 @@ module ApplicationHelper
   def copyright_generator
     ShowViewTool::Renderer.copyright('Daniel Shotonwa', 'All right reserved')
   end
+
+  def strip_body(body, number)
+    body[0...number]
+  end
 end
