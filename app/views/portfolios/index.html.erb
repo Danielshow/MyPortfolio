@@ -1,21 +1,8 @@
-<main role="main">
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">My Portfolios</h1>
-      <p class="lead text-muted">These are some of the applications I have created, view them and see the stack used. Reach out to know more.</p>
-      <p>
-        <a href="mailto:danielshotonwa53@gmail.com?subject=PortFolio Contact" class="btn btn-primary my-2">Email me</a>
-        <a href="/" class="btn btn-secondary my-2">About me</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-       <%= render partial: 'portfolio_item', collection: @portfolio_items %>
-      </div>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+     <%= render partial: 'portfolio_item', collection: @portfolio_items %>
     </div>
   </div>
-</main>
+</div>
 
