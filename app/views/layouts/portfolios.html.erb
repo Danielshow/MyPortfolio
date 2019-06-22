@@ -3,6 +3,9 @@
   <head>
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
     <%= csp_meta_tag %>
     <meta name="keywords" content= "<%= @seo_keywords %>"/>
 
@@ -11,11 +14,11 @@
   </head>
 
   <body>
+    <%= render 'shared/portfolio_header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render "shared/navbar", location: 'top' %>
-    <%= login_helper %>
     <%= yield %>
+    <%= render 'shared/portfolio_footer' %>
     <%= source_helper %> 
   </body>
 </html>
