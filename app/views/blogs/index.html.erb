@@ -3,10 +3,10 @@
       <h1 class="display-4 font-italic">My Blog Post</h1>
       <p class="lead my-3">I write to share my knowledge to the world and improve myself daily.</p>
       <p class="lead mb-0"><a href="<%= root_path %>" class="text-white font-weight-bold">Read more about me...</a></p>
+      <p><%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %></p>
     </div>
 </div>
 <p id="notice"><%= notice %></p>
-
 <main role="main">
   <div class="row">
     <div class="col-md-8 blog-main">
@@ -18,36 +18,7 @@
         <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
       </nav>
     </div>
-    <aside class="col-md-4 blog-sidebar">
-      <div class="p-4 mb-3 bg-light rounded">
-        <h4 class="font-italic">About Me</h4>
-        <p class="mb-0">I am a Full Stack Ruby on Rails/Javascript Developer that specialises in making the world a beautiful place.</p>
-      </div>
-
-      <div class="p-4">
-        <h4 class="font-italic">Topics</h4>
-        <ol class="list-unstyled mb-0">
-          <li><a href="#">Rails</a></li>
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">GraphQL</a></li>
-          <li><a href="#">Open Source</a></li>
-          <li><a href="#">Vim</a></li>
-          <li><a href="#">React</a></li>
-          <li><a href="#">Redux</a></li>
-        </ol>
-      </div>
-
-      <div class="p-4">
-        <h4 class="font-italic">Some Links</h4>
-        <ol class="list-unstyled">
-          <li><%= link_to fa_icon("github"), "https://github.com/Danielshow" %>  Github</li>
-          <li><%= link_to fa_icon("facebook"), "https://www.facebook.com/daniel.show.96" %>    Facebook</li>
-          <li><%= link_to fa_icon("twitter"), "https://twitter.com/d_showWorld" %>  Twitter</li>
-          <li><%= link_to fa_icon("linkedin"), "https://www.linkedin.com/in/shotonwa-daniel-aa8190125/" %>  Linkedin</li>
-        </ol>
-      </div>
-    </aside>
+    <%= render 'aside' %>
   </div>
 </main>
 
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>

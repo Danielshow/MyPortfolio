@@ -2,14 +2,14 @@
   <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
     <div class="col p-4 d-flex flex-column position-static">
       <strong class="d-inline-block mb-2 text-primary">World</strong>
-      <h3 class="mb-0"><%= blog.title %></h3>
-      <div class="mb-1 text-muted"><%= time_ago_in_words(blog.created_at) %> ago</div>
+      <h3 class="mb-0"><%= link_to blog.title, blog_path(blog) %></h3>
+      <div class="mb-1 text-muted"><i>Published <%= time_ago_in_words(blog.created_at) %> ago</i></div>
       <p class="card-text mb-auto"><%= strip_body(blog.body, 20)%>...</p>
       <a href="<%= blog_path(blog) %>" class="">Continue reading</a>
-      <p><%= link_to blog.status, toggle_status_blog_path(blog) %></p>
-      <%= link_to 'Show', blog_path(blog) %>
-      <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %>
-      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%>
+      <% if logged_in?(:site_admin) %>
+        <p><%= link_to blog.status, toggle_status_blog_path(blog) %> / <%= link_to 'Edit', edit_blog_path(blog) %> /
+        <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+      <% end %>
     </div>
   </div>
 </div>
