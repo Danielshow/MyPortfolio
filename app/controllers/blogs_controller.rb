@@ -5,11 +5,11 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show edit update destroy toggle_status]
   layout 'blog'
   access all: %i[show index],
-         user: { except: %i[destroy new create edit update] },
+         user: { except: %i[toggle_status destroy new create edit update] },
          site_admin: :all
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:created_at).page(params[:page]).per(10)
     @page_title = 'My Blog'
   end
 
@@ -53,8 +53,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html redirect_to blogs_url,
-                              notice: 'Blog was successfully destroyed.'
+      format.html {  redirect_to blogs_url, notice: 'Blog was successfully deleted.' }
       format.json { head :no_content }
     end
   end
