@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
          site_admin: :all
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:created_at).page(params[:page]).per(10)
     @page_title = 'My Blog'
   end
 
