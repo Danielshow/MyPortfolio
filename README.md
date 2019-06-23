@@ -2,7 +2,7 @@
 ** Built with Ruby on Rails, Javascript and Jquery
 
 This  Application is a full stack application that allows user see my Profile, blogs and Portfolio
-
+[Test App](https://portfolio-stag.herokuapp.com/)
 
 ### Ruby version
   - v2.53
@@ -20,7 +20,7 @@ PG_PASSWORD=
 - Run `rails db:seed` to add some data to the database
 - Run `bundle install` to run all dependencies
 - finally run `rails s` to start the server
-- visit `localhost:3000/graphiql` to run queries
+- visit `localhost:3000`
 
 ### Database creation
 ```
@@ -32,7 +32,7 @@ rails db:create
 ```
 rails db:migrate
 ```
-* How to run the test suite\
+* How to run the test suite
 rspec
 
 ## Stack
