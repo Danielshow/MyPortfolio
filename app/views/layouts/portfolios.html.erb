@@ -16,16 +16,18 @@
   <body>
     <%= render 'shared/portfolio_header' %>
     <main role="main">
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">My Portfolio</h1>
-          <p class="lead text-muted">These are some of the applications I have created, view them and see the stack used. Reach out to know more.</p>
-          <p>
-          <a href="<%= about_path %>" class="btn btn-primary my-2">About me</a>
-          <a href="<%= blogs_path %>" class="btn btn-secondary my-2">My Blogs</a>
-          </p>
-        </div>
-      </section>
+      <% unless logged_in?(:site_admin)%>
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">My Portfolio</h1>
+            <p class="lead text-muted">These are some of the applications I have created, view them and see the stack used. Reach out to know more.</p>
+            <p>
+            <a href="<%= about_path %>" class="btn btn-primary my-2">About me</a>
+            <a href="<%= blogs_path %>" class="btn btn-secondary my-2">My Blogs</a>
+            </p>
+          </div>
+        </section>
+      <% end %>
 
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
