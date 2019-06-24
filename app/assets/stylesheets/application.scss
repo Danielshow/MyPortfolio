@@ -57,7 +57,11 @@ body {
 .masthead {
   margin-bottom: 2rem;
 }
-
+.nav {
+  span {
+    padding-right: 8px;
+  }
+}
 .masthead-brand {
   margin-bottom: 0;
   color: #fff;

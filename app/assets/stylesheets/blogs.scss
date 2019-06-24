@@ -50,6 +50,9 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  span {
+    margin-top: 6px;
+  }
 }
 
 .nav-scroller .nav-link {
@@ -127,4 +130,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+.active {
+  color: #007bff !important;
 }
