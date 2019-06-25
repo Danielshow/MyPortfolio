@@ -21,19 +21,21 @@ $(document).ready(function(){
   set_position()
   const el = document.getElementById('portfolio-card');
   let updatedValue = []
-  Sortable.create(el, {
-    onUpdate: function (){
-      const portfolio_item = $('.portfolio-card')
-      $.each(portfolio_item, function(index, value){
-        updatedValue.push({
-          id: $(value).data('id'),
-          position: index + 1
+  if (el) {
+   Sortable.create(el, {
+      onUpdate: function (){
+        const portfolio_item = $('.portfolio-card')
+        $.each(portfolio_item, function(index, value){
+          updatedValue.push({
+            id: $(value).data('id'),
+            position: index + 1
+          })
         })
-      })
-      updatePosition(updatedValue)
-    }
-  });
-})
+        updatePosition(updatedValue)
+      }
+    });
+  }
+ })
 
 function set_position() {
   const portfolio_item = $('.portfolio-card')

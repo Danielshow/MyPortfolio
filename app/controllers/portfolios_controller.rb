@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio, except: %i[new create index sort_portfolio]
   layout 'portfolios'
   access all: %i[show index],
-         user: { except: %i[destroy edit create update new] },
+         user: { except: %i[destroy edit create update new sort_portfolio] },
          site_admin: :all
   def index
     @portfolio_items = Portfolio.by_positiom
