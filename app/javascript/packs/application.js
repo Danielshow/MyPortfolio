@@ -14,4 +14,9 @@ require("channels")
 // or the `imagePath` JavaScript helper below.
 //
 import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
-// import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Sortable from 'sortablejs';
+
+$(document).ready(function(){
+  var el = document.getElementById('portfolio-card');
+  var sortable = Sortable.create(el);
+})

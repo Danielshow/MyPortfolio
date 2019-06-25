@@ -8,7 +8,7 @@ class PortfoliosController < ApplicationController
          user: { except: %i[destroy edit create update new] },
          site_admin: :all
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_positiom
   end
 
   def new
