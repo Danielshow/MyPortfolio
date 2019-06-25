@@ -14,4 +14,41 @@ require("channels")
 // or the `imagePath` JavaScript helper below.
 //
 import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
-// import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Sortable from 'sortablejs';
+
+$(document).ready(function(){
+  // console.log(window.location.href)
+  set_position()
+  const el = document.getElementById('portfolio-card');
+  let updatedValue = []
+  if (el) {
+   Sortable.create(el, {
+      onUpdate: function (){
+        const portfolio_item = $('.portfolio-card')
+        $.each(portfolio_item, function(index, value){
+          updatedValue.push({
+            id: $(value).data('id'),
+            position: index + 1
+          })
+        })
+        updatePosition(updatedValue)
+      }
+    });
+  }
+ })
+
+function set_position() {
+  const portfolio_item = $('.portfolio-card')
+  $.each(portfolio_item, function( index, value  ) {
+    $(value).attr('data-pos', index+1)
+  });
+}
+
+function updatePosition(order) {
+  $.ajax({
+    url: '/portfolios/sort', 
+    type: 'PUT',
+    data: {order: order},
+  })
+  return
+}
