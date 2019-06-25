@@ -9,5 +9,7 @@ class Blog < ApplicationRecord
   validates :body, presence: true
   validates_presence_of :topic_id
 
+  has_rich_text :body
+
   belongs_to :topic
 end

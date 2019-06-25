@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
 
   def show
     @page_title = @blog.title
-    @seo_keywords = @blog.body
+    @seo_keywords = @blog.title
   end
 
   def new
