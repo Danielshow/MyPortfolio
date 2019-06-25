@@ -14,8 +14,8 @@
         <%= render @blogs %>
       </div>
       <nav class="blog-pagination">
-        <%= link_to_next_page @blogs, 'Next Page', class: 'btn btn-outline-primary' %>
         <%= link_to_prev_page @blogs, 'Prev Page', class: 'btn btn-outline-primary' %>
+        <%= link_to_next_page @blogs, 'Next Page', class: 'btn btn-outline-primary' %>
       </nav>
     </div>
     <%= render 'aside' %>
