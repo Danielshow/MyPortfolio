@@ -9,6 +9,9 @@ class Portfolio < ApplicationRecord
 
   has_rich_text :body
 
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
+
   after_initialize :set_defaults
 
   def set_defaults
