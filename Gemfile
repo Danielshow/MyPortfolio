@@ -58,3 +58,4 @@ gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem "mini_magick"
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'carrierwave-aws'
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
