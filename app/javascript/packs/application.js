@@ -16,6 +16,7 @@ require("trix")
 //
 import '@rails/actiontext';
 import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import './cocoon.js';
 import Sortable from 'sortablejs';
 
 $(document).ready(function(){
