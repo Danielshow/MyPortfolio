@@ -29,8 +29,6 @@ puts "5 skill created"
     title: "Portfolio #{portfolio}",
     subtitle: "Ruby on Rails #{portfolio}",
     body: "New Body Yes",
-    thumb_image: "https://via.placeholder.com/350x200",
-    main_image: "https://via.placeholder.com/600x400"
   )
 end
 
