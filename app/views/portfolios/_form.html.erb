@@ -1,4 +1,14 @@
 <%= form_for(@portfolio_item) do |f| %>
+  <% if @portfolio_item.errors.any? %>
+    <div id="error_explanation">
+      <p class="alert alert-danger"><%= pluralize(@portfolio_item.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+      <ul>
+        <% @portfolio_item.errors.full_messages.each do |message| %>
+          <li><small class="text-danger"><%= message %></small></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row">
     <div class="col-md-6">
      <div class="form-group">
