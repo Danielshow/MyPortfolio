@@ -15,6 +15,7 @@
 
   <body>
     <%= render 'shared/portfolio_header' %>
+    <%= render "shared/alert"%>
     <main role="main">
       <% unless logged_in?(:site_admin)%>
         <section class="jumbotron text-center">
@@ -31,7 +32,6 @@
         <%= yield %>
       </main>
     <%= render 'shared/portfolio_footer' %>
-    <%= render "shared/alert"%>
     <%= source_helper %> 
   </body>
 </html>

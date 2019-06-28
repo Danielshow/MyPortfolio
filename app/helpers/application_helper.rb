@@ -26,6 +26,15 @@ module ApplicationHelper
     body[0...number]
   end
 
+  def add_alert(alert, css)
+    ("<div class='alert #{css} alert-dismissible fade show' role='alert'>
+      <strong>#{alert}</strong>
+      <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button>
+    </div>").html_safe
+  end
+
   def nav_items
     [
       {
