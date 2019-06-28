@@ -15,6 +15,7 @@
   <body>
     <div class="container">
       <%= render 'shared/blog_header' %>     
+      <%= render "shared/alert"%>
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
           <%= render 'shared/blog_nav' %>
@@ -24,7 +25,6 @@
       <%= yield %>
       <%= source_helper %>
       <%= render 'shared/blog_footer' %>
-      <%= render "shared/alert"%>
     </div>
    </body>
 </html>
