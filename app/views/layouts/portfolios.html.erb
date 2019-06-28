@@ -28,12 +28,10 @@
           </div>
         </section>
       <% end %>
-
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
         <%= yield %>
       </main>
     <%= render 'shared/portfolio_footer' %>
+    <%= render "shared/alert"%>
     <%= source_helper %> 
   </body>
 </html>

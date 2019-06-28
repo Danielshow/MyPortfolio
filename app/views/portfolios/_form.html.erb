@@ -30,12 +30,12 @@
   <ul>
     <h3>Technology used</h3>
     <%= f.fields_for :technologies do |ff| %>
-      <li>
-        <%= ff.label :name %>
-        <%= ff.text_field :name, class: 'form-control'%>
-      </li>
+      <%= render 'technology_fields', f: ff %>
     <% end %>
   </ul>
+  <div>
+    <%= link_to_add_association 'Add technology', f, :technologies %>
+  </div>
   <div class="field">
     <%= f.submit 'Save Portfolio Item', class: 'btn btn-block btn-primary' %>
   </div>
