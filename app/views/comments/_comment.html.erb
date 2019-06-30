@@ -2,11 +2,11 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-1">
-
+        <%= gravatar_helper comment.user %>
       </div>
         <div class="col-md-11">
-          <h5 class="card-title"><%= comment.user.name  %> </h5><small><%= time_ago_in_words(comment.created_at) %> ago </small>
         <p class="card-text"><%= comment.content %></p>
+        <p class="card-text text-muted small"><i>comment posted by <b><%= comment.user.name  %> </b><small><%= time_ago_in_words(comment.created_at) %> ago</i></small></p>
       </div>
     </div>
   </div>
