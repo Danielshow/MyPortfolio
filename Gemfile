@@ -36,3 +36,5 @@ gem "mini_magick"
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'carrierwave-aws'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
+gem 'twitter', '~> 6.2'
+gem 'redis', '~> 3.3', '>= 3.3.1'
