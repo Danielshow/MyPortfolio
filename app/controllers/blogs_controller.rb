@@ -19,10 +19,14 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
-    @seo_keywords = @blog.title
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.title
+    else
+      redirect_to blogs_path, notice: 'You are not authorized to view this page'
+    end
   end
 
   def new
@@ -33,7 +37,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.topic_id = 2
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -81,6 +84,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body)
+    params.require(:blog).permit(:title, :body, :topic_id)
   end
 end
