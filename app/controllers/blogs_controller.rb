@@ -14,6 +14,7 @@ class BlogsController < ApplicationController
              else
                Blog.published.order_blogs.page(params[:page]).per(10)
              end
+    @topics = Topic.all
 
     @page_title = 'My Blog'
   end

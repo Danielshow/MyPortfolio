@@ -1,0 +1,16 @@
+<main role="main">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h2 class="text-center"><%= @topic.title.capitalize %></h2>
+      <div class="row mb-2">
+        <%= render @blogs %>
+      </div>
+      <nav class="blog-pagination">
+        <%= link_to_prev_page @blogs, 'Prev Page', class: 'btn btn-outline-primary' %>
+        <%= link_to_next_page @blogs, 'Next Page', class: 'btn btn-outline-primary' %>
+      </nav>
+    </div>
+    <%= render 'blogs/aside', locals:{ @topics => @topics } %>
+  </div>
+</main>
+

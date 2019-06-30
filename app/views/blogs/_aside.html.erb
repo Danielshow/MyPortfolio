@@ -7,13 +7,9 @@
   <div class="p-4">
     <h4 class="font-italic">Topics</h4>
     <ol class="list-unstyled mb-0">
-      <li><a href="#">Rails</a></li>
-      <li><a href="#">Javascript</a></li>
-      <li><a href="#">GraphQL</a></li>
-      <li><a href="#">Open Source</a></li>
-      <li><a href="#">Vim</a></li>
-      <li><a href="#">React</a></li>
-      <li><a href="#">Redux</a></li>
+      <% @topics.each do |topic| %>
+        <li><%= link_to topic.title.capitalize, topic_path(topic) %></li>
+      <% end %>
     </ol>
   </div>
 
