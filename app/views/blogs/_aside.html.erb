@@ -7,10 +7,11 @@
   <div class="p-4">
     <h4 class="font-italic">Topics</h4>
     <ol class="list-unstyled mb-0">
-      <% @topics.each do |topic| %>
+      <% @set_sidebar_topics.each do |topic| %>
         <li><%= link_to topic.title.capitalize, topic_path(topic) %></li>
       <% end %>
     </ol>
+    <%= link_to 'View all topics', topics_path, class: 'btn btn-primary btn-sm mt-2' %>
   </div>
 
   <div class="p-4">
