@@ -14,4 +14,8 @@ class Blog < ApplicationRecord
   has_rich_text :body
 
   belongs_to :topic
+
+  def self.order_blogs
+    order('created_at DESC')
+  end
 end
