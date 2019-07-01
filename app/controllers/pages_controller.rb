@@ -2,12 +2,11 @@
 
 # Pages controller
 class PagesController < ApplicationController
-  def home
-    @post = Blog.all
+  def home; end
+
+  def about
     @skills = Skill.all
   end
-
-  def about; end
 
   def contact; end
 end
