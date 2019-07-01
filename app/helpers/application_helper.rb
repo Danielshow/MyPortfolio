@@ -12,10 +12,11 @@ module ApplicationHelper
     end
   end
 
-  def source_helper
+  def source_helper(style)
     source = session[:source]
-    greeting = "Thanks for visiting me from #{source}"
-    content_tag(:p, greeting, class: 'source-greeting') if source
+    greeting = "Thanks for visiting me from #{source} please feel free to #{link_to 'contact me',
+      contact_path } if you'd like to work together."
+      content_tag(:p, greeting.html_safe, class: style) if source
   end
 
   def copyright_generator
@@ -23,7 +24,7 @@ module ApplicationHelper
   end
 
   def strip_body(body, number)
-    body[0...number]
+    body.body.to_plain_text[0...number]
   end
 
   def add_alert(alert, css)

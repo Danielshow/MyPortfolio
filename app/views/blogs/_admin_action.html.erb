@@ -1,0 +1,8 @@
+<% if logged_in?(:site_admin) %>
+  <nav class="breadcrumb">
+    <%= link_to fa_icon('file-text'), toggle_status_blog_path(blog), class: 'mr-2', style: blog_status_color(blog) %>
+    <%= link_to fa_icon('edit'), edit_blog_path(blog), class: 'mr-2' %>
+    <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'mr-2' %> </p>
+  </nav>
+ <% end %>
+
