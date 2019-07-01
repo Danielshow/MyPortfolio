@@ -1,9 +1,13 @@
 import consumer from "./consumer"
 jQuery(document).on('turbolinks:load', () => {
   let comments = $('#comments')
+  let blog_id = null
+  if (comments.length) {
+    blog_id = comments[0].dataset['blogId']
+  }
   const commentSubscription = consumer.subscriptions.create({ 
     channel: "CommentsChannel",
-    blog_id: comments[0].dataset['blogId'] },
+    blog_id: blog_id },
    {
     connected() {
       // Called when the subscription is ready for use on the server

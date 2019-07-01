@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <%= csp_meta_tag %>
     <meta name="keywords" content= "<%= @seo_keywords %>"/>
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -29,9 +29,9 @@
           </div>
         </section>
       <% end %>
+        <%= source_helper("alert alert-warning text-center") %> 
         <%= yield %>
       </main>
     <%= render 'shared/portfolio_footer' %>
-    <%= source_helper %> 
   </body>
 </html>

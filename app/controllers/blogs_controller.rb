@@ -3,21 +3,31 @@
 # Blogs controller
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show edit update destroy toggle_status]
+  before_action :set_sidebar_topics, except: %i[create update destroy toggle_status]
   layout 'blog'
   access all: %i[show index],
          user: { except: %i[toggle_status destroy new create edit update] },
          site_admin: :all
 
   def index
-    @blogs = Blog.order(:created_at).page(params[:page]).per(10)
+    @blogs = if logged_in?(:site_admin)
+               Blog.order_blogs.page(params[:page]).per(10)
+             else
+               Blog.published.order_blogs.page(params[:page]).per(10)
+             end
+
     @page_title = 'My Blog'
   end
 
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
-    @seo_keywords = @blog.title
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.title
+    else
+      redirect_to blogs_path, notice: 'You are not authorized to view this page'
+    end
   end
 
   def new
@@ -28,7 +38,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.topic_id = 2
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -76,6 +85,10 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body)
+    params.require(:blog).permit(:title, :body, :topic_id, :status)
+  end
+
+  def set_sidebar_topics
+    @set_sidebar_topics = Topic.with_blogs
   end
 end
