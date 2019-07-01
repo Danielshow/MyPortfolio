@@ -30,7 +30,6 @@ jQuery(document).on('turbolinks:load', () => {
   $("#new_comment").submit((e) => {
     e.preventDefault()
     const textarea = $("#comment_content")
-    console.log(textarea)
     if ($.trim(textarea.val().length)){
       commentSubscription.send_comment(textarea.val(), comments[0].dataset['blogId'])
       textarea.val('')
