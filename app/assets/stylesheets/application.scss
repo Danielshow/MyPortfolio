@@ -259,12 +259,11 @@ body {
 
 .tweetcard {
   width: 100%;
-  color: #fff;
   a {
     color: blue;
   }
   .tweet {
-    background-color: lighten(#38A1F3, .9);
+    background-color: #fff;
     padding: 20px;
   }
 }

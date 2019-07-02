@@ -1,14 +1,10 @@
- <div class="col-md-6">
-  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    <div class="col p-4 d-flex flex-column position-static">
-      <strong class="d-inline-block mb-2 text-primary"><%= blog.topic.title %></strong>
-      <h3 class="mb-0"><%= link_to blog.title, blog_path(blog) %></h3>
-      <div class="mb-1 text-muted"><i>Published <%= time_ago_in_words(blog.created_at) %> ago</i></div>
-      <p class="card-text mb-auto"><%= strip_body(blog.body, 20)%>...</p>
-      <a href="<%= blog_path(blog) %>" class="">Continue reading</a>
-      <%= render partial: 'blogs/admin_action', locals: { blog: blog } %>
-    </div>
-  </div>
+<div class="post-preview">
+  <a href="<%= blog_path(blog) %>">
+    <h2 class="post-title"><%= blog.title %></h2>
+    <h3 class="post-subtitle"><%= strip_body(blog.body, 40) %></h3>
+  </a>
+  <p class="post-meta"><i>Published <%= time_ago_in_words(blog.created_at) %> ago</i></p>
+  <%= render partial: 'blogs/admin_action', locals: { blog: blog } %>
 </div>
-
+<hr />
 
