@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
+  <div class="row port-form">
     <div class="col-md-6">
      <div class="form-group">
         <%= f.label :title %>
@@ -35,16 +35,17 @@
           <%= f.rich_text_area :body %>
         </div>
       </div>
+     <div class="col-md-12">
+        <h3>Technology used</h3>
+        <%= f.fields_for :technologies do |ff| %>
+          <%= render 'technology_fields', f: ff %>
+        <% end %>
+      </div>
+
   </div>
       
-  <ul>
-    <h3>Technology used</h3>
-    <%= f.fields_for :technologies do |ff| %>
-      <%= render 'technology_fields', f: ff %>
-    <% end %>
-  </ul>
-  <div>
-    <%= link_to_add_association 'Add technology', f, :technologies %>
+   <div class="port-form">
+    <%= link_to_add_association fa_icon("plus-square"), f, :technologies %>
   </div>
   <div class="field">
     <%= f.submit 'Save Portfolio Item', class: 'btn btn-block btn-primary' %>
