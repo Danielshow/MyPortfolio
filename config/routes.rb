@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'portfolio/:id' => 'portfolios#show', as: 'portfolio_show'
   get '/about' => 'pages#about'
   get '/contact' => 'pages#contact'
+  get '/tech-news' => 'pages#tech_news'
   resources :blogs do
     member do
       get :toggle_status
