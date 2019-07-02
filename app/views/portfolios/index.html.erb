@@ -1,8 +1,11 @@
-<div class="album py-5 bg-light">
+<%= render "shared/section_port" %>
+<section class="album py-5 content-section">
   <div class="container">
-    <div class="row" id="<%= "portfolio-card" if logged_in?(:site_admin) %>">
-     <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+    <div class="content-section-heading text-center">
+        <h3 class="mb-5">Recent Projects</h3>
+      </div>
+    <div class="row no-gutters" id="<%= "portfolio-card" if logged_in?(:site_admin) %>">
+      <%= render partial: 'portfolio_item', collection: @portfolio_items %>
     </div>
   </div>
-</div>
-
+</section>
