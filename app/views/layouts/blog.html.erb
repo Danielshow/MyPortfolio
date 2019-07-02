@@ -14,17 +14,19 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render 'shared/blog_header' %>     
-      <%= render "shared/alert"%>
-      <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-          <%= render 'shared/blog_nav' %>
-           <%= login_helper('p-2 text-muted') %>
-        </nav>
+    <nav class="navbar navbar-expand-lg bg-transparent" id="mainNav">
+      <div class="container"><a class="navbar-brand" href="/">DanielShow</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div
+          class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="nav navbar-nav ml-auto">
+              <%= render 'shared/blog_nav' %>
+              <%= login_helper('nav-link text-muted') %>
+          </ul>
+        </div>
       </div>
-      <%= yield %>
-      <%= render 'shared/blog_footer' %>
-    </div>
-   </body>
+    </nav>
+    <%= yield %>
+    <%= render 'shared/blog_footer' %>
+    <%= render "shared/alert"%>
+  </body>
 </html>

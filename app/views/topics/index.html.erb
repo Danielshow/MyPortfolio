@@ -1,12 +1,17 @@
-<main role="main">
-  <div class="row">
-    <div class="col-md-8 blog-main">
-      <h2>Topic</h2>
-      <div>
-        <%= render @topics %>
+<%= render 'shared/blog_header' %>
+<div class="container blog-show">
+  <main role="main">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h2>Topic</h2>
+        <div>
+          <%= render @topics %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= render 'blogs/aside' %>
       </div>
     </div>
-    <%= render 'blogs/aside' %>
-  </div>
-</main>
+  </main>
+</div>
 
