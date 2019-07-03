@@ -141,6 +141,10 @@ trix-editor {
   font-size: 1.2rem;
 }
 
+.portfolio-item img {
+  height: 220px;
+}
+
 @media (min-width: 992px) {
   .portfolio-item {
     max-width: none;

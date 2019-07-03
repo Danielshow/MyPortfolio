@@ -12,7 +12,7 @@
   <% end %>
   <div class="form-group">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'form-control' %>
+    <%= f.text_area :content, class: 'form-control', maxlength: "1000" %>
   </div>
   <%= f.submit 'Post Comment', class: 'btn btn-primary mb-2' %>
 <% end %>
