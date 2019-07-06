@@ -21,6 +21,7 @@
       <p>
         <%= @blog.body %>
       </p>
+      <p><%= login_helper('pull-right small text-muted mr-2') %></p><br />
       <% unless current_user.is_a? GuestUser %>
         <%= render 'comments/comment_form' %>
       <% end %>

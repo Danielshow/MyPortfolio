@@ -18,10 +18,16 @@ import '@rails/actiontext';
 import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import './cocoon.js';
 import Sortable from 'sortablejs';
+import Typed from 'typed.js';
+import anime from 'animejs/lib/anime.es.js';
+
 
 $(document).ready(function(){
   // console.log(window.location.href)
+  typed()
   set_position()
+  animate()
+  
   const el = document.getElementById('portfolio-card');
   let updatedValue = []
   if (el) {
@@ -39,6 +45,23 @@ $(document).ready(function(){
     });
   }
  })
+
+function animate(){
+  anime({
+      targets: '.shapes',
+        translateX: 50,
+        rotate: '1turn',
+        backgroundColor: '#FFF',
+      duration: 800,
+      delay: anime.stagger(100)
+    });
+}
+function typed(){
+  const typed = new Typed('#typed', {
+     stringsElement: '#typed-strings',    
+     typeSpeed: 50
+  });
+}
 
 function set_position() {
   const portfolio_item = $('.portfolio-card')

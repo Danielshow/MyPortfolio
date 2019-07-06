@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <%= csp_meta_tag %>
+    <meta name="keywords" content= "<%= @seo_keywords %>"/>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag 'about', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="w-100 h-100 mx-auto">
+      <header class="masthead mb-auto">
+        <div class="container inner">
+          <nav class="nav nav-masthead justify-content-center">
+            <%= render "shared/application"%>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <main role="main">
+      <span class="square shapes top"></span>
+      <span class="circle shapes left"></span>
+      <span class="circle shapes right"></span>
+      <span class="circle shapes right down"></span>
+      <span class="square shapes abs down"></span>
+      <span class="square shapes abs"></span>
+      <div class="main-heading">
+         <div id="typed-strings">
+            <h1>Hi, I am Daniel (show)....... :) </h1>
+          </div>
+          <span id="typed"></span>
+      </div>
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
+  </body>
+</html>
