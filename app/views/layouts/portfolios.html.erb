@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <%= csp_meta_tag %>
+    <meta name="keywords" content= "<%= @seo_keywords %>"/>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/portfolio_header' %>
+    <%= render "shared/alert"%>
+    <main role="main">
+        <%= source_helper("alert alert-warning text-center") %> 
+        <%= yield %>
+      </main>
+    <%= render 'shared/portfolio_footer' %>
+  </body>
+</html>

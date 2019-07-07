@@ -1,0 +1,11 @@
+<div class="col-lg-4 portfolio-card" data-id="<%= portfolio_item.id %>">
+  <a class="portfolio-item" href="<%= portfolio_show_path(portfolio_item)%>">
+    <div class="caption">
+      <div class="caption-content">
+        <h2><%= portfolio_item.title %></h2>
+        <p class="mb-0"><%= portfolio_item.subtitle %></p>
+      </div>
+    </div>
+    <%= image_tag portfolio_img(portfolio_item.thumb_image.url, 'thumb'), width: '100%', class: 'img-fluid' %>
+  </a>
+</div>

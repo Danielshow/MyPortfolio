@@ -1,0 +1,7 @@
+<% if flash[:alert] %>
+  <%= add_alert(flash[:alert], "alert-danger") %>
+<% elsif flash[:error] %>
+  <%= add_alert(flash[:error], "alert-danger") %>
+<% elsif flash[:notice] %>
+  <%= add_alert(flash[:notice], "alert-info") %>
+<% end %>
