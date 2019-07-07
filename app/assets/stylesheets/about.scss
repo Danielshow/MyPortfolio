@@ -75,7 +75,11 @@ body {
   z-index: 1;
   font-family: 'Arvo', serif;
 }
-
+@media (max-width: 48em) {
+  #typed {
+    text-align: center;
+  }
+}
 .typed-cursor.typed-cursor--blink {
   font-size: 50px;
   color: #fff;
@@ -88,51 +92,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.square {
-  width: 100px;
-  height: 100px;
-  background: red;                     
-}
-
-.circle {
-  width: 100px;
-  height: 100px;
-  background: red;
-  border-radius: 50%
-}
-
-.shapes {
-  background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #e74c3c, #000000);
-  background: linear-gradient(to right, #e74c3c, #000000);
-  position: absolute;
-  z-index: 1;
-}
-
-.top {
-  top: 40%;
-  left: 40%;
-}
-
-.left {
-  top: 20%;
-  left: 80%;
-}
-
-.right {
-  right: 20%;
-  top: 30%;
-}
-
-.down {
-  left: 10%;
-}
-
-.abs {
-  right: 30%;
-  top: 10%;
 }
 
 .polaroids {
@@ -246,3 +205,4 @@ body {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
