@@ -88,8 +88,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_cable.allowed_request_origins = ["https://portfolio-stag.herokuapp.com", "http://portfolio-stag.herokuapp.com"]
-  config.action_cable.url = "wss://portfolio-stag.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ["https://portfolio-stag.herokuapp.com", "http://portfolio-stag.herokuapp.com", "https://portfolio-produ.herokuapp.com", "http://portfolio-produ.herokuapp.com"]
+  config.action_cable.url = "wss://portfolio-produ.herokuapp.com/cable"
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
