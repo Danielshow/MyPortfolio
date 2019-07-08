@@ -16,15 +16,20 @@ class BlogsController < ApplicationController
                Blog.published.order_blogs.page(params[:page]).per(10)
              end
 
-    @page_title = 'My Blog'
+    @page_title = 'My Blog Post'
+    @seo_keywords = 'Programming, Articles, Rails, Javascript, GraphQL'
+    @blog_url = request.url
+    @blog_title = "DanielShow's Blog"
+    @blog_content = "This is my Blog, I write to challenge myself on things I know and to give back to my community :)"
   end
 
   def show
+    seo_optimization
     if logged_in?(:site_admin) || @blog.published?
       @blog = Blog.includes(:comments).friendly.find(params[:id])
       @comment = Comment.new
       @page_title = @blog.title
-      @seo_keywords = @blog.title
+      @seo_keywords = strip_body(@blog.body, 70)
     else
       redirect_to blogs_path, notice: 'You are not authorized to view this page'
     end
@@ -80,6 +85,12 @@ class BlogsController < ApplicationController
 
   private
 
+  def seo_optimization
+    @blog_url = request.url
+    @blog_title = @blog.title
+    @blog_content = strip_body(@blog.body, 70)
+  end
+
   def set_blog
     @blog = Blog.friendly.find(params[:id])
   end
@@ -91,4 +102,10 @@ class BlogsController < ApplicationController
   def set_sidebar_topics
     @set_sidebar_topics = Topic.with_blogs
   end
+
+  def strip_body(body, number)
+    body.body.to_plain_text[0...number]
+  end
+
+
 end
