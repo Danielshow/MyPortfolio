@@ -5,7 +5,13 @@
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="<%= @blog_content %>">
+    <meta property="og:image" content="<%= image_url('myimg.jpg')%>" />
+    <meta property="og:url" content="<%= @blog_url %>" />
+    <meta property="og:title" content="<%= @blog_title %>" />
+    <meta property="og:site_name" content="Daniel Shotonwa Blog" />
+    <meta itemprop="description" name="description" property="og:description" content="<%= @blog_content %>" />
+    <meta itemprop="image" content="<%= image_url('myimg.jpg')%>" />
     <%= csp_meta_tag %>
     <meta name="keywords" content= "<%= @seo_keywords %>"/>
     <%= favicon_link_tag 'favicon.ico' %>
