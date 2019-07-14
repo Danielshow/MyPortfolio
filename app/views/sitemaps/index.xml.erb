@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc><%= @host %></loc>
+    <priority>1.00</priority>
+   </url>
+   <url>
+     <loc><%= "#{@host}#{about_path}" %></loc>
+    <priority>1.00</priority>
+   </url>
+   <url>
+     <loc><%= "#{@host}#{blogs_path}" %></loc>
+     <priority>1.00</priority>
+   </url>
+   <url>
+     <loc><%= "#{@host}#{portfolios_path}" %></loc>
+     <priority>0.81</priority>
+   </url>
+   <url>
+     <loc><%= "#{@host}#{tech_news_path}" %></loc>
+     <priority>0.81</priority>
+   </url>
+   <% @blogs.each do |blog| %>
+     <url>
+       <loc><%= "#{@host}/blogs/#{blog.slug}" %></loc>
+       <priority>0.81</priority>
+     </url>
+   <% end %>
+   <% @portfolios.each do |portfolio| %>
+       <url>
+         <loc><%= "#{@host}/portfolio/#{portfolio.id}" %></loc>
+         <priority>0.81</priority>
+       </url>
+   <% end %>
+   <% @topics.each do |topic| %>
+       <url>
+         <loc><%= "#{@host}/topic/#{topic.id}" %></loc>
+         <priority>0.81</priority>
+       </url>
+   <% end %>
+</urlset>
