@@ -14,6 +14,6 @@ class PagesController < ApplicationController
   private
 
   def set_seo
-    @seo_keywords = 'Daniel Shotonwa, Programming, Javascript, Ruby on Rails, Portfolio, Danielshow'
+    @seo_keywords = 'Daniel Shotonwa, Danielshow, Programming, Javascript, Ruby on Rails, Portfolio'
   end
 end

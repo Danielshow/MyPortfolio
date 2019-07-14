@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
              end
 
     @page_title = 'My Blog Post'
-    @seo_keywords = 'Programming, Articles, Rails, Javascript, GraphQL'
+    @seo_keywords = 'Danielshow, Daniel Shotonwa, Programming, Articles, Rails, Javascript, GraphQL'
     @blog_url = request.url
     @blog_title = "DanielShow's Blog"
     @blog_content = "This is my Blog, I write to challenge myself on things I know and to give back to my community :)"
