@@ -13,7 +13,7 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'figaro'
 gem 'friendly_id', '~> 5.2.4'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem 'bootstrap', '~> 4.3.1'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
