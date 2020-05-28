@@ -30,7 +30,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'show_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 1.6', '>= 1.6.3'
 gem "font-awesome-rails"
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem "mini_magick"
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
